@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Space+Grotesk&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(235, 234, 238);
+    margin: auto;
+    width: 100vw;
+    overflow-x: hidden;
+}
+input{
+    margin: 10px 0;
+}
+h1{
+    text-align: center;
+    font-size: 48px;
+    margin: 20px 0;
+}
+h3{
+    margin: 15px;
+}
+.post-container{
+    background-color: rgb(241, 241, 241);
+}
+
+.sub-container{
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    width: 450px; 
+    background-color: rgb(241, 241, 241);
+    padding: 10px;
+}
+.newPost{
+    background-color: rgb(238, 235, 255);
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 10px gray;
+    padding: 10px;
+    width: 400px;
+}
+textarea{
+    width: 400px;
+    border: none;
+    padding: 15px;
+}
+#post-btn{
+    border: none;
+    background-color: blueviolet;
+    color: rgb(255, 249, 249);
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+#post-btn:hover{
+    box-shadow: 1px 5px 10px grey;
+    background-color: rgb(96, 9, 177);
+}
+/* image styles */
+img{
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 0px 3px black;
+}
+img:hover{
+    box-shadow: 1px 5px 18px black;
+}
+/* video styles */
+#uploadedVideo{
+    margin: 10px 0;
+}
+.video-container{
+    display: flex;
+   
+
+}
+.uploadedImage{
+    width: 300px;
+    height: 200px;
+}
