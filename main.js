@@ -20,6 +20,7 @@ const date =
 const time =
   today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
+
 //new post
 postBtn.addEventListener('click', () => {
     
@@ -50,7 +51,7 @@ postBtn.addEventListener('click', () => {
         
 })
 
-
+//current location
 const  locateMe =()=> {
   const status = document.querySelector("#status");
   const mapLink = document.querySelector("#map-link");
@@ -74,23 +75,7 @@ const  locateMe =()=> {
   }
 }
 locateMe();
-//document.querySelector("#find-me").addEventListener("onload", geoFindMe);
 
-
-// const successfulLookup = position => {
-//   const { latitude, longitude } = position.coords;
-//   fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=1234`)
-//     .then(response => response.json()
-//       .then(console.log))
-// }
-// window.navigator.geolocation.getCurrentPosition(successfulLookup, console.log);
-    //locationTag.innerHTML = ``
-
-
-//window.navigator.geolocation.getCurrentPosition(console.log, console.log);
-
-
-//document.getElementById("like-btn").addEventListener("click", inc);
 //video
 const uploadVideo = document.getElementById("uploadedVideo");
 
@@ -98,12 +83,12 @@ const playBtn = document.getElementById("moreVideoes");
 const videoContainer = document.getElementById("video-container");
 uploadVideo.addEventListener("change", readVideo);
 
-let videos = [];
+let videos = []
 
 function readVideo(event) {
     const video = document.getElementById("video");
     const videoSource = document.getElementById("source");
-    //console.log(event.target.files);
+
     const file = event.target.files[0]
     if (event.target.files && file) {
     var reader = new FileReader();
@@ -113,59 +98,60 @@ function readVideo(event) {
       videos.push(e.target.result);
       console.log(videos)
       videos.map(video => {
+      
       videoContainer.innerHTML += `
-       
-        <video width="400" height="200" id="video" controls>
+        <video width="300" height="200" id="video" controls>
             <source src=${video} id="source" type="video/mp4">
         </video>
-       
       `;
-        //videoSource.src = video;
         
       })
       video.load();
-      //videoContainer.innerHTML=''
     }
-
-    reader.readAsDataURL(file);
+    
+      reader.readAsDataURL(file);
+      videoContainer.innerHTML = "";
   }
 }
 
 //image
 const uploadImage = document.getElementById("upload-image");
-//const imgUrl = URL.createObjectURL(uploadImage.files[0])
+
 const imageContainer = document.getElementById('image-container')
 
-uploadImage.addEventListener("change", function () {
-  const reader = new FileReader();
-  reader.addEventListener("load", () => {
-      const uploaded_image = reader.result;
-      imageContainer.innerHTML += `
+let images = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH9nApEIhxYfur3PI2dZLNVrq0Q9t7as2A5Q&usqp=CAU",
+  "https://img.freepik.com/free-vector/alone-concept-illustration_114360-2393.jpg?w=2000",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzgmbSR_S04x6ju4roIndnto4RmHg5isjGtw&usqp=CAU",
+];
+
+const showImage = () => {
+  images.map((image) => {
+    imageContainer.innerHTML += `
         <div>
-            <img src=${uploaded_image} class="uploadedImage">
+            <img src=${image} class="uploadedImage">
         </div>
         `;
-    // document.querySelector(
-    //   "#display-image"
-    // ).style.backgroundImage = `url(${uploaded_image})`;
   });
+}
+showImage()
+uploadImage.addEventListener("change", function f() {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    const uploaded_image = reader.result;
+    images.push(uploaded_image);
+    console.log(images)
+    showImage()
+    
+  });
+  imageContainer.innerHTML = "";
   reader.readAsDataURL(this.files[0]);
 });
 
-const readImage = () => {
-    const reader = new FileReader();
-    reader.onload = () => {
-        const uploadedImage = reader.result;
-        imageContainer.innerHTML += `
-        <div>
-            <img src=${uploadedImage}>
-        </div>
-        `
-        reader.readAsDataURL(this.files[0]);
-    }
-}
 
-readImage()
+
+
+
 
 
 

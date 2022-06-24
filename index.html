@@ -12,14 +12,15 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>MiniBook</h1>
-
+    <h1>Binary <span class="name">Diary</span></h1>
+    <h3 class="welcome">Welcome. Puja!</h3>
     <small id="status"></small>
     <p id="map-link"></p>
     <div class="container">
       <div class="content-container post-container">
+       <!-- // <div class="title"><h2>Posts</h2></div> -->
         <div class="input">
-          <h3>Create new post</h3>
+          
           <textarea
             name=""
             id="post"
@@ -27,12 +28,15 @@
             rows="10"
             placeholder="What's on your mind?"
           ></textarea>
-          <button id="post-btn">Post</button>
+          
         </div>
-
+<button id="post-btn">Post</button>
         <div id="all-posts"></div>
       </div>
       <div class="content-container">
+        <div class="title"><h2>Photos</h2></div>
+        
+        <div id="image-container"></div>
         <div class="input">
           <h3>Upload New Image</h3>
           <input
@@ -40,23 +44,33 @@
             accept="image/*"
             id="upload-image"
             placeholder=""
+            
           />
         </div>
-
-        <div id="image-container"></div>
       </div>
 
       <div class="content-container">
+        <div class="title"><h2>Videos</h2></div>
+        <div class="videos">
+            <video width="300" height="200" id="video" controls>
+                <source src='/assets/Funniest Cat Videos Compilation in 2 Minute.mp4' id="source" type="video/mp4">
+            </video>
+            <video width="300" height="200" id="video" controls>
+                <source src='/assets/videoplayback.mp4' id="source" type="video/mp4">
+            </video>
+            <video width="300" height="200" id="video" controls>
+                <source src='/assets/Funniest Cat Videos Compilation in 2 Minute.mp4' id="source" type="video/mp4">
+            </video>
+        </div>
+        <div id="video-container"></div>
         <div class="input">
           <h3>Upload New Video</h3>
           <input type="file" name="file" id="uploadedVideo" />
         </div>
 
-        <div id="video-container"></div>
-        <!-- <video width="400" height="200" id="video" controls>
-                <source id="source" type="video/mp4">
-            </video> -->
+        
       </div>
+      
     </div>
 
     <script src="/main.js"></script>

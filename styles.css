@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 *{
     margin: 0;
@@ -8,23 +9,39 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(235, 234, 238);
+    /* background-color: ; */
     margin: auto;
     width: 100vw;
     overflow-x: hidden;
+    background-image:linear-gradient(to right,rgb(213, 189, 236),rgb(239, 238, 241))
+}
+.title{
+text-align: center;
+    background-color: blueviolet;
+    color:#fff;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 10px;
+    font-size: 24px;
+}
+.name{
+    color: blueviolet;
 }
 input{
     margin: 10px 0;
 }
 h1{
     text-align: center;
-    font-size: 48px;
-    margin: 20px 0;
+    font-size: 64px;
+    margin: 40px 0;
+    font-family: 'Josefin Sans', sans-serif;
 }
 h3{
-    margin: 15px;
-    
-    
+    margin: 15px; 
+    text-align: center;
+}
+.welcome{
+    color: rgb(89, 37, 138);
 }
 #map-link{
     text-align: center;
@@ -40,6 +57,11 @@ h3{
 }
 .post-container{
     background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .sub-container{
@@ -55,9 +77,10 @@ h3{
     align-items: center;
     justify-content: center;
     margin: 10px;
-    width: 450px; 
+    box-shadow: 1px 0px 8px rgb(224, 223, 223);
     background-color: rgb(241, 241, 241);
     padding: 10px;
+    border-radius: 10px;
 }
 .input{
     margin: 10px;
@@ -69,7 +92,7 @@ h3{
     margin:20px 10px;
     box-shadow: 1px 1px 10px gray;
     padding: 10px;
-    width: 350px;
+    width: 300px;
     
 }
 .newPost small{
@@ -80,16 +103,18 @@ color: rgb(100, 100, 100);
     
 }
 textarea{
-    width: 400px;
+    width: 73vw;
     border: none;
-    padding: 15px;
+    padding: 30px;
+    border-radius: 20px;
+    height: 100px;
 }
 #post-btn{
     border: none;
-    background-color: blueviolet;
+    background-color: rgb(96, 52, 138);
     color: rgb(255, 249, 249);
     padding: 10px 25px;
-    font-weight: bold;
+    font-size: 18px;
     border-radius: 5px;
     margin: 10px;
     cursor: pointer;
@@ -119,7 +144,7 @@ textarea{
 }
 /* image styles */
 img{
-    margin: 10px;
+    margin: 17px;
     border-radius: 10px;
     box-shadow: 1px 0px 3px black;
 }
@@ -139,8 +164,11 @@ img:hover{
    padding: 10px;
 
 }
+.videos{
+    display: flex;
+}
 video{
-    margin:10px;
+    margin:20px;
 }
 .uploadedImage{
     width: 300px;
