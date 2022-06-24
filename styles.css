@@ -23,6 +23,14 @@ h1{
 }
 h3{
     margin: 15px;
+    
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .post-container{
     background-color: rgb(241, 241, 241);
@@ -39,20 +47,24 @@ h3{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin: 10px;
     width: 450px; 
     background-color: rgb(241, 241, 241);
     padding: 10px;
 }
+.input{
+    margin: 10px;
+}
+
 .newPost{
     background-color: rgb(238, 235, 255);
     border-radius: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin:20px 10px;
     box-shadow: 1px 1px 10px gray;
     padding: 10px;
-    width: 400px;
+    width: 350px;
+    
 }
 textarea{
     width: 400px;
@@ -81,15 +93,22 @@ img{
 }
 img:hover{
     box-shadow: 1px 5px 18px black;
+    transform: scale(1.2);
 }
 /* video styles */
 #uploadedVideo{
     margin: 10px 0;
 }
-.video-container{
-    display: flex;
-   
 
+#video-container,#image-container,#all-posts{
+    display: grid;
+    grid-template-columns: auto auto auto;
+   background-color: rgb(241, 241, 241);
+   padding: 10px;
+
+}
+video{
+    margin:10px;
 }
 .uploadedImage{
     width: 300px;

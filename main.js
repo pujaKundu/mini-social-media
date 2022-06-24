@@ -32,18 +32,33 @@ const playBtn = document.getElementById("moreVideoes");
 const videoContainer = document.getElementById("video-container");
 uploadVideo.addEventListener("change", readVideo);
 
+let videos = [];
+
 function readVideo(event) {
     const video = document.getElementById("video");
     const videoSource = document.getElementById("source");
-    console.log(event.target.files);
+    //console.log(event.target.files);
     const file = event.target.files[0]
     if (event.target.files && file) {
     var reader = new FileReader();
-
+  
     reader.onload = function (e) {
-      console.log("loaded");
-      videoSource.src = e.target.result;
+      
+      videos.push(e.target.result);
+      console.log(videos)
+      videos.map(video => {
+      videoContainer.innerHTML += `
+       
+        <video width="400" height="200" id="video" controls>
+            <source src=${video} id="source" type="video/mp4">
+        </video>
+       
+      `;
+        //videoSource.src = video;
+        
+      })
       video.load();
+      //videoContainer.innerHTML=''
     }
 
     reader.readAsDataURL(file);
